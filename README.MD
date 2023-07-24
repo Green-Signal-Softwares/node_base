@@ -12,6 +12,7 @@ Prisma JS (<https://www.prisma.io/>) \
 Cors (<https://github.com/expressjs/cors#readme>) \
 ExpressJs (<https://expressjs.com/>) \
 MorganJS (<https://github.com/expressjs/morgan#readme>) \
+Docker (<https://www.docker.com/>) \
 
 ## Project initialization
 
@@ -29,7 +30,26 @@ You just need to add a new block of code accondingly to the User model at `./pri
 npx prisma migrate dev --name init
 ```
 
-## 🔥 Run the Project 🔥
+## 🔥 Run the Project with Docker 🔥
+
+Create the Docker Container for MySQL just run:
+
+```bash
+docker-compose up -d
+```
+
+Make sure to update your Prisma project's configuration file (usually schema.prisma) to use the correct database connection URL:
+
+
+```prisma
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:docker123@localhost:3304/prisma-mysql"
+}
+```
+
+Now, your Prisma project is dockerized and connected to the MySQL container.
+
 
 Now you're ready to go! You just need to:
 
@@ -59,3 +79,4 @@ Deploying your application using Heroku -> <https://www.heroku.com/nodejs>
 
 > Jhonatan Junio ([GitHub](https://github.com/jhonatanjunio))\
 > Arthur Mendes ([GitHub](https://github.com/Thumendes))
+> Hector Siman ([GitHub](https://github.com/hectorlutero))

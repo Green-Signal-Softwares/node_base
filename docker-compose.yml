@@ -1,0 +1,30 @@
+version: "3"
+services:
+
+  #MySQL Service
+  db:
+    image: mysql:5.7.22
+    container_name: prisma-mysql-db
+    tty: true
+    ports:
+      - "3304:3306"
+    environment:
+      MYSQL_DATABASE: prisma-mysql
+      MYSQL_ROOT_PASSWORD: docker123
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ~/docker/prisma-mysql/mysql:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local
