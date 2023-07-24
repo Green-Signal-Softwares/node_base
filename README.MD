@@ -48,7 +48,7 @@ datasource db {
 }
 ```
 
-Now, your Prisma project is dockerized and connected to the MySQL container.
+Awesome! Your Prisma project is dockerized and connected to the MySQL container.
 
 
 Now you're ready to go! You just need to:
@@ -78,5 +78,5 @@ Deploying your application using Heroku -> <https://www.heroku.com/nodejs>
 ## Contributors
 
 > Jhonatan Junio ([GitHub](https://github.com/jhonatanjunio))\
-> Arthur Mendes ([GitHub](https://github.com/Thumendes))
+> Arthur Mendes ([GitHub](https://github.com/Thumendes))\
 > Hector Siman ([GitHub](https://github.com/hectorlutero))
